@@ -1,35 +1,45 @@
 .portfolio-section-photos {
   background-color: white;
+  padding: 20px;
 }
 
 .portfolio-section-photos h2 {
   color: #242424;
   margin-bottom: 80px;
+  text-align: center; /* Centrer le titre de la section */
 }
 
 .grid-paysages,
 .grid-portraits {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-adaptative pour différentes tailles d'écran */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adaptatif avec un minimum de 250px par image */
   gap: 15px;
+  justify-items: center; /* Centre les éléments horizontalement */
+  align-items: center; /* Centre les éléments verticalement */
 }
 
 .lien-conteneur-photo {
   position: relative;
   text-align: center; /* Centre le titre sous l'image */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrer le conteneur de l'image et le titre */
 }
 
 .photo-container {
   position: relative;
-  display: inline-block; /* Permet à l'élément d'être mis en ligne tout en maintenant sa position relative */
-  width: 100%;
+  display: block; /* Utilisation de block pour être sûr qu'il prenne toute la largeur */
+  width: 100%; /* L'image prend toute la largeur du conteneur */
   height: auto;
+  max-width: 100%; /* Garantir qu'on ne dépasse pas la largeur du conteneur parent */
 }
 
 .photo-container img {
   width: 100%; /* L'image prend toute la largeur du conteneur */
   height: auto; /* Conserve le ratio de l'image */
   display: block; /* Supprime les marges indésirables sous l'image */
+  object-fit: cover; /* Couvre entièrement l'élément sans déformation */
+  aspect-ratio: 4 / 5; /* Garantit que les images respectent le format 4:5 */
 }
 
 .photo-hover {
@@ -45,14 +55,6 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
-}
-
-.grid-paysages img,
-.grid-portraits img {
-  width: 100%;
-  height: auto; /* Ne déforme pas l'image */
-  object-fit: cover; /* Couvre entièrement l'élément sans déformation */
-  aspect-ratio: 4 / 5; /* Garantit que les images respectent le format 4:5 */
 }
 
 .photo-title {
@@ -72,11 +74,70 @@
   display: flex; /* Affiche l'overlay sombre au survol */
 }
 
-/* Responsive */
-@media screen and (max-width: 996px) {
+/* Mobile First (petits écrans) */
+@media screen and (max-width: 576px) {
   .grid-paysages,
   .grid-portraits {
-      grid-template-columns: 1fr; /* Sur les petits écrans, une seule colonne */
-      gap: 15px;
+    grid-template-columns: 1fr; /* Sur les petits écrans, une seule colonne */
+    gap: 15px;
+  }
+
+  .photo-title {
+    font-size: 1em; /* Taille du titre plus petite pour les petits écrans */
+  }
+
+  .photo-hover {
+    font-size: 1.2em; /* Réduire la taille de l'overlay sur les petits écrans */
+  }
+}
+
+/* Tablettes et petits écrans (écrans de 576px à 768px) */
+@media screen and (max-width: 768px) {
+  .grid-paysages,
+  .grid-portraits {
+    grid-template-columns: repeat(1, 1fr); /* 2 colonnes */
+    gap: 15px;
+  }
+
+  .photo-title {
+    font-size: 1.2em; /* Augmenter légèrement la taille du titre */
+  }
+
+  .photo-hover {
+    font-size: 1.4em; /* Taille moyenne pour l'overlay */
+  }
+}
+
+/* Moyens écrans (écrans de 768px à 1024px) */
+@media screen and (max-width: 1024px) {
+  .grid-paysages,
+  .grid-portraits {
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    gap: 20px;
+  }
+
+  .photo-title {
+    font-size: 1.3em; /* Taille du titre plus grande pour les écrans moyens */
+  }
+
+  .photo-hover {
+    font-size: 1.5em; /* Augmenter la taille de l'overlay */
+  }
+}
+
+/* Grands écrans (plus de 1024px) */
+@media screen and (min-width: 1025px) {
+  .grid-paysages,
+  .grid-portraits {
+    grid-template-columns: repeat(3, 1fr); /* 4 colonnes pour les grands écrans */
+    gap: 20px;
+  }
+
+  .photo-title {
+    font-size: 1.4em; /* Taille du titre pour grands écrans */
+  }
+
+  .photo-hover {
+    font-size: 1.6em; /* Taille de l'overlay encore plus grande */
   }
 }
