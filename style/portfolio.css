@@ -74,28 +74,10 @@
   display: flex; /* Affiche l'overlay sombre au survol */
 }
 
-/* Mobile First (petits écrans) */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 700px) {
   .grid-paysages,
   .grid-portraits {
-    grid-template-columns: 1fr; /* Sur les petits écrans, une seule colonne */
-    gap: 15px;
-  }
-
-  .photo-title {
-    font-size: 1em; /* Taille du titre plus petite pour les petits écrans */
-  }
-
-  .photo-hover {
-    font-size: 1.2em; /* Réduire la taille de l'overlay sur les petits écrans */
-  }
-}
-
-/* Tablettes et petits écrans (écrans de 576px à 768px) */
-@media screen and (max-width: 768px) {
-  .grid-paysages,
-  .grid-portraits {
-    grid-template-columns: repeat(1, 1fr); /* 2 colonnes */
+    grid-template-columns: 1fr;
     gap: 15px;
   }
 
@@ -105,23 +87,6 @@
 
   .photo-hover {
     font-size: 1.4em; /* Taille moyenne pour l'overlay */
-  }
-}
-
-/* Moyens écrans (écrans de 768px à 1024px) */
-@media screen and (max-width: 1024px) {
-  .grid-paysages,
-  .grid-portraits {
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
-    gap: 20px;
-  }
-
-  .photo-title {
-    font-size: 1.3em; /* Taille du titre plus grande pour les écrans moyens */
-  }
-
-  .photo-hover {
-    font-size: 1.5em; /* Augmenter la taille de l'overlay */
   }
 }
 
