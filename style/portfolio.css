@@ -74,7 +74,7 @@
   display: flex; /* Affiche l'overlay sombre au survol */
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
   .grid-paysages,
   .grid-portraits {
     grid-template-columns: 1fr;
