@@ -85,7 +85,7 @@
     margin-top: 30px;
   }
 
-/* Ajustements pour les écrans de taille moyenne */
+/* Ajustements pour les écrans de taille moyenne (tablettes et grands smartphones) */
 @media screen and (max-width: 996px) {
   .accueil-introduction {
       flex-direction: column;
@@ -111,8 +111,8 @@
   
   .accueil-photos div {
       flex-direction: column;
-      align-items: center;  /* Centre les images horizontalement */
-      justify-content: center; /* Centrer les images verticalement */
+      align-items: center;
+      justify-content: center;
   }
   
   .section-contact {
@@ -125,11 +125,15 @@
   }
 }
 
-/* Ajustements pour les petits écrans (téléphones) */
-@media screen and (max-width: 576px) {
+/* Ajustements pour les petits écrans (téléphones), incluant iPhone et iPhone mini */
+@media screen and (max-width: 414px) {
   .accueil-introduction {
       width: 90%;
-      gap: 20px;
+      gap: 15px;
+  }
+
+  .accueil-introduction h1 {
+      font-size: 1.8rem; /* Ajuste la taille du titre pour les petits écrans */
   }
 
   form {
@@ -138,33 +142,67 @@
 
   .accueil-photos {
       padding: 10px;
-      align-items: center; /* Centre les photos horizontalement */
+      align-items: center;
+      justify-content: center;
   }
 
   .accueil-photos h2 {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+      font-size: 1.4rem; /* Taille du texte réduite pour l'adaptation */
   }
 
   /* Centrer les images dans la section accueil-photos */
   .accueil-photos div {
       display: flex;
       flex-direction: column;
-      align-items: center; /* Centre les images horizontalement */
-      justify-content: center; /* Centre les images verticalement */
+      align-items: center;
+      justify-content: center;
+  }
+
+  .accueil-photos img {
+      max-width: 90%; /* Limite la largeur de l'image pour éviter qu'elle ne soit trop grande */
+      height: auto;
+      margin: 10px auto; /* Espace autour de chaque image pour respirer */
   }
 
   .section-contact h2 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
   }
 
   input[type='submit'] {
       width: 100%;
   }
+}
 
-  /* Centrer les images individuelles dans la section accueil-photos */
-  .accueil-photos img {
-      max-width: 100%;
-      height: auto;
-      margin: 10px auto;  /* Marge autour de chaque image */
+/* Ajustements pour les très petits écrans (iPhone SE, iPhone mini) */
+@media screen and (max-width: 375px) {
+  .accueil-introduction {
+      width: 95%;
+      gap: 10px;
+  }
+
+  .accueil-introduction h1 {
+      font-size: 1.6rem;
+  }
+
+  .accueil-photos h2 {
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+  }
+
+  .section-contact h2 {
+      font-size: 1.3rem;
+  }
+
+  input,
+  textarea {
+      font-size: 0.9rem;
+      padding: 12px;
+  }
+
+  input[type='submit'] {
+      width: 100%;
+      font-size: 1rem;
+      padding: 10px;
   }
 }

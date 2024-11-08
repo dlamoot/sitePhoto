@@ -95,7 +95,7 @@
   .grid-paysages,
   .grid-portraits {
     grid-template-columns: repeat(3, 1fr); /* 4 colonnes pour les grands écrans */
-    gap: 20px;
+    gap: 40px;
   }
 
   .photo-title {
