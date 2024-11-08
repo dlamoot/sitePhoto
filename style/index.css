@@ -1,4 +1,4 @@
-.accueil-introduction{
+.accueil-introduction {
     display: flex;
     flex-direction: row;
     width: 50%;
@@ -9,26 +9,26 @@
 }
 
 .accueil-introduction h1 {
-  line-height: 1;
-  margin-bottom: 20px;
+    line-height: 1;
+    margin-bottom: 20px;
 }
 
-.accueil-introduction img{
-  box-shadow: 12px 4px 5px #A5B4FC;
+.accueil-introduction img {
+    box-shadow: 12px 4px 5px #A5B4FC;
 }
 
-.accueil-photos{
+.accueil-photos {
     background-color: white;
     padding: 80px;
 }
 
-.accueil-photos h2{
+.accueil-photos h2 {
     color: #242424;
     text-align: center;
     margin-bottom: 80px;
 }
 
-.accueil-photos div{
+.accueil-photos div {
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -36,173 +36,87 @@
     margin-bottom: 15px;
 }
 
-.accueil-photos img{
-  /*box-shadow: 6px 6px 0px rgba(0, 0, 0);*/
-  border-radius: 8%;
+.accueil-photos img {
+    border-radius: 8%;
 }
 
 .section-contact h2 {
     color: #a5b4fc;
     text-align: center;
     margin-bottom: 50px;
-  }
-  
-  form {
+}
+
+form {
     display: flex;
     flex-direction: column;
     width: 40%;
     margin: auto;
     color: white;
-  }
-  
-  .form-nom-email {
+}
+
+.form-nom-email {
     display: flex;
     flex-direction: row;
     gap: 20px;
-  }
-  
-  .form-column {
+}
+
+.form-column {
     flex: 1;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-  }
-  
-  input,
-  textarea {
+}
+
+input,
+textarea {
     padding: 15px;
     border-radius: 3px;
     border: none;
-  }
-  
-  label {
+}
+
+label {
     margin-bottom: 10px;
-  }
-  
-  input[type='submit'] {
+}
+
+input[type='submit'] {
     width: 200px;
     margin: auto;
     margin-top: 30px;
-  }
+}
 
-/* Ajustements pour les écrans de taille moyenne (tablettes et grands smartphones) */
+/* Ajustements pour les écrans de taille moyenne */
 @media screen and (max-width: 996px) {
-  .accueil-introduction {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .accueil-introduction div {
-      padding-right: 0;
-      text-align: center;
-      order: 2;
-  }
-  
-  .accueil-introduction img {
-      order: 1;
-      margin-bottom: 20px;
-      width: 100%;
-  }
-  
-  .accueil-photos {
-      padding: 20px;
-  }
-  
-  .accueil-photos div {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .section-contact {
-      padding: 50px 20px;
-  }
-  
-  .form-nom-email {
-      flex-direction: column;
-      gap: 0;
-  }
+    .accueil-introduction {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%; /* Réduction de la largeur pour les écrans moyens */
+    }
+
+    .accueil-introduction img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .accueil-photos {
+        padding: 20px;
+    }
+
+    .accueil-photos div {
+        flex-direction: row; /* Conserve la disposition en rangée */
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .section-contact {
+        padding: 50px 20px;
+    }
+
+    .form-nom-email {
+        flex-direction: column;
+        gap: 0;
+    }
 }
 
-/* Ajustements pour les petits écrans (téléphones), incluant iPhone et iPhone mini */
-@media screen and (max-width: 414px) {
-  .accueil-introduction {
-      width: 90%;
-      gap: 15px;
-  }
 
-  .accueil-introduction h1 {
-      font-size: 1.8rem; /* Ajuste la taille du titre pour les petits écrans */
-  }
-
-  form {
-      width: 90%;
-  }
-
-  .accueil-photos {
-      padding: 10px;
-      align-items: center;
-      justify-content: center;
-  }
-
-  .accueil-photos h2 {
-      margin-bottom: 30px;
-      font-size: 1.4rem; /* Taille du texte réduite pour l'adaptation */
-  }
-
-  /* Centrer les images dans la section accueil-photos */
-  .accueil-photos div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-
-  .accueil-photos img {
-      max-width: 90%; /* Limite la largeur de l'image pour éviter qu'elle ne soit trop grande */
-      height: auto;
-      margin: 10px auto; /* Espace autour de chaque image pour respirer */
-  }
-
-  .section-contact h2 {
-      font-size: 1.4rem;
-  }
-
-  input[type='submit'] {
-      width: 100%;
-  }
-}
-
-/* Ajustements pour les très petits écrans (iPhone SE, iPhone mini) */
-@media screen and (max-width: 375px) {
-  .accueil-introduction {
-      width: 95%;
-      gap: 10px;
-  }
-
-  .accueil-introduction h1 {
-      font-size: 1.6rem;
-  }
-
-  .accueil-photos h2 {
-      margin-bottom: 20px;
-      font-size: 1.3rem;
-  }
-
-  .section-contact h2 {
-      font-size: 1.3rem;
-  }
-
-  input,
-  textarea {
-      font-size: 0.9rem;
-      padding: 12px;
-  }
-
-  input[type='submit'] {
-      width: 100%;
-      font-size: 1rem;
-      padding: 10px;
-  }
-}
