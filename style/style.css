@@ -114,6 +114,7 @@ header nav img {
 /* Agrandir l'entête et le pied de page */
 header, footer {
   padding: 40px 20px;  /* Augmenter le padding pour donner plus d'espace */
+  font-size: 1.4em;  /* Agrandir la taille de la police */
 }
 
 /* Agrandir la taille de la police dans l'entête et le pied de page */
