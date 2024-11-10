@@ -121,18 +121,48 @@
     opacity: 1; /* Affiche l'overlay au survol */
 }
 
+/* Réduire la taille des photos pour petits écrans */
 @media screen and (max-width: 996px) {
+  /* Modification de la grille pour les photos de paysage et portrait */
   .grid-paysages,
   .grid-portraits {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Colonnes adaptatives avec un minimum de 150px */
+    gap: 10px; /* Réduction de l'espacement entre les photos */
   }
 
+  /* Redimensionnement des images et de leurs conteneurs */
+  .photo-container {
+    width: 90%; /* Réduire la largeur des conteneurs d'image */
+    max-width: 100%; /* Assurer que la largeur reste limitée à la taille du conteneur parent */
+  }
+
+  .photo-container img {
+    aspect-ratio: 4 / 5; /* Maintien du ratio d'image */
+    width: 100%; /* Image prend toute la largeur du conteneur */
+    height: auto; /* Préserver le ratio de l'image */
+  }
+
+  /* Ajustement du texte hover pour être plus discret sur petits écrans */
+  .photo-hover {
+    font-size: 1.2em; /* Réduction de la taille du texte au survol */
+    padding: 5px;
+  }
+
+  /* Réduction de la taille du titre des photos */
   .photo-title {
-    font-size: 1.2em; /* Augmenter légèrement la taille du titre */
+    font-size: 1em; /* Taille réduite pour les petits écrans */
+  }
+}
+
+/* Très petits écrans - ajustement supplémentaire pour l'affichage harmonieux */
+@media screen and (max-width: 576px) {
+  .grid-paysages,
+  .grid-portraits {
+    grid-template-columns: 1fr; /* Affichage en une colonne pour les très petits écrans */
+    gap: 5px; /* Réduction supplémentaire de l'espacement */
   }
 
   .photo-hover {
-    font-size: 1.4em; /* Taille moyenne pour l'overlay */
+    font-size: 1em; /* Taille réduite du texte au survol */
   }
 }
