@@ -1,0 +1,92 @@
+.portfolio-section-photos {
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .portfolio-section-photos h2 {
+    color: #242424;
+    margin-bottom: 80px;
+    text-align: center; /* Centrer le titre de la section */
+  }
+  
+  .grid-paysages,
+  .grid-portraits {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adaptatif avec un minimum de 250px par image */
+    grid-template-columns: repeat(2, 1fr); /* 4 colonnes pour les grands écrans */
+    gap: 200px;
+    justify-items: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+  }
+  
+  .lien-conteneur-photo {
+    position: relative;
+    text-align: center; /* Centre le titre sous l'image */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer le conteneur de l'image et le titre */
+  }
+  
+  .photo-container {
+    position: relative;
+    display: block; /* Utilisation de block pour être sûr qu'il prenne toute la largeur */
+    width: 100%; /* L'image prend toute la largeur du conteneur */
+    height: auto;
+    max-width: 100%; /* Garantir qu'on ne dépasse pas la largeur du conteneur parent */
+  }
+  
+  .photo-container img {
+    width: 100%; /* L'image prend toute la largeur du conteneur */
+    height: auto; /* Conserve le ratio de l'image */
+    display: block; /* Supprime les marges indésirables sous l'image */
+    object-fit: cover; /* Couvre entièrement l'élément sans déformation */
+    aspect-ratio: 4 / 5; /* Garantit que les images respectent le format 4:5 */
+  }
+  
+  .photo-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+  }
+  
+  .photo-title {
+    margin-top: 10px; /* Espacement entre l'image et le titre */
+    font-size: 1.1em; /* Taille du titre */
+    color: #242424; /* Couleur du texte */
+    font-weight: bold;
+    font-style: italic; /* Met le texte en italique */
+    text-align: center; /* Centre le titre sous l'image */
+    max-width: 90%; /* Assure que le titre ne dépasse pas une certaine largeur */
+    margin-left: auto; /* Centre le titre horizontalement */
+    margin-right: auto; /* Centre le titre horizontalement */
+    z-index: 2; /* Assurer que le titre est au-dessus de l'overlay */
+  }
+  
+  .lien-conteneur-photo:hover .photo-hover {
+    display: flex; /* Affiche l'overlay sombre au survol */
+  }
+  
+  @media screen and (max-width: 996px) {
+    .grid-paysages,
+    .grid-portraits {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    .photo-title {
+      font-size: 1.2em; /* Augmenter légèrement la taille du titre */
+    }
+  
+    .photo-hover {
+      font-size: 1.4em; /* Taille moyenne pour l'overlay */
+    }
+  }
