@@ -126,7 +126,7 @@
   /* Modification de la grille pour les photos de paysage et portrait */
   .grid-paysages,
   .grid-portraits {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Colonnes adaptatives avec un minimum de 150px */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colonnes adaptatives avec un minimum de 150px */
     gap: 10px; /* Réduction de l'espacement entre les photos */
   }
 
@@ -155,7 +155,7 @@
 }
 
 /* Très petits écrans - ajustement supplémentaire pour l'affichage harmonieux */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 650px) {
   .grid-paysages,
   .grid-portraits {
     grid-template-columns: 1fr; /* Affichage en une colonne pour les très petits écrans */
