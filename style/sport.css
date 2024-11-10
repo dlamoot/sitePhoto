@@ -74,6 +74,56 @@
   .lien-conteneur-photo:hover .photo-hover {
     display: flex; /* Affiche l'overlay sombre au survol */
   }
+
+  /* Section bannière */
+.portfolio-banner {
+    background-color: white; /* Fond blanc */
+    margin: 0;
+    padding: 0;
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    overflow: hidden; /* Masque le débordement */
+}
+
+.banner-photo-container {
+    position: relative;
+    width: 100%; /* Largeur à 100% de la page */
+    height: 300px; /* Hauteur réduite pour un effet panoramique */
+}
+
+.banner-photo-container img {
+    width: 100%; /* Prend toute la largeur de l'écran */
+    height: 100%; /* Hauteur adaptée au conteneur */
+    object-fit: cover; /* Assure le remplissage sans déformation */
+    display: block;
+}
+
+.banner-photo-container .photo-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.banner-photo-container:hover .photo-hover {
+    opacity: 1; /* Affiche l'overlay au survol */
+}
+
+/* Responsive : Ajustement pour les petits écrans */
+@media screen and (max-width: 768px) {
+    .banner-photo-container {
+        height: 200px; /* Hauteur réduite pour les écrans plus petits */
+    }
+}
+
   
   @media screen and (max-width: 996px) {
     .grid-paysages,
