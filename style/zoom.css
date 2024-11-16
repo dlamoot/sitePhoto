@@ -1,0 +1,60 @@
+/* Conteneur des articles */
+.articles {
+    padding: 40px;
+    color: black;
+}
+
+.article-preview {
+    margin-bottom: 30px;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre de chaque article */
+.article-preview h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Texte de l'article */
+.article-preview p {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Lien "Lire la suite" */
+.cta {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 3px;
+}
+
+.cta:hover {
+    color: #004d99;
+    border-color: #004d99;
+}
+
+.portfolio-section-photos {
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .portfolio-section-photos h2 {
+    color: #242424;
+    margin-bottom: 80px;
+}
+  
+  .portfolio-section-photos p{
+    color: black;
+  }
+  

@@ -1,3 +1,8 @@
+:root {
+    --animation-duration: 10s; /* Durée totale du défilement */
+    --animation-speed: 1rem;   /* Vitesse de défilement (en pixels par seconde) */
+}
+
 .accueil-introduction {
     display: flex;
     flex-direction: row;
@@ -34,6 +39,16 @@
     gap: 15px;
     justify-content: center;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accueil-photos .carousel-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    
 }
 
 .accueil-photos img {
@@ -84,25 +99,85 @@ input[type='submit'] {
     margin-top: 30px;
 }
 
-/* Ajustements pour les écrans de taille moyenne */
+
+/* Animation pour le défilement horizontal */
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+.photos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .photos:before,
+  .photos:after {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .photos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+  
+  .photos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+  
+  .photos:hover .photos-slide {
+    animation-play-state: paused;
+  }
+  
+  .photos-slide {
+    display: inline-block;
+    animation: slide infinite linear;
+    animation-duration: var(--animation-duration);
+  }
+
+  .photos-slide img {
+    height: 24rem; /* Augmente la hauteur des images */
+    margin: 0 20px; /* Ajuste l'espacement entre les images */
+    transition: transform 0.3s ease; /* Ajoute un effet fluide au survol */
+}
+
+.photos-slide img:hover {
+    transform: scale(1.1); /* Zoom léger sur l'image au survol */
+}
+
+
+
 @media screen and (max-width: 996px) {
     .accueil-introduction {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-      }
-    
-      .accueil-introduction div {
+    }
+
+    .accueil-introduction div {
         padding-right: 0;
         text-align: center;
         order: 2;
-      }
-    
-      .accueil-introduction img {
+    }
+
+    .accueil-introduction img {
         order: 1;
         margin-bottom: 20px;
         width: 100%;
-      }
+    }
 
     .accueil-photos {
         padding: 20px;
@@ -110,9 +185,28 @@ input[type='submit'] {
 
     .accueil-photos div {
         flex-direction: row; /* Conserve la disposition en rangée */
-        flex-wrap: wrap;
+        flex-wrap: nowrap; /* Empêche les images de se répartir sur plusieurs lignes */
         gap: 10px;
         justify-content: center;
+    }
+
+    .photos {
+        display: flex;              /* Utilise flexbox pour aligner les images en ligne */
+        flex-wrap: nowrap;          /* Empêche les images de se répartir sur plusieurs lignes */
+        justify-content: center;    /* Centre les images horizontalement */
+        gap: 10px;                  /* Espace entre les images */
+        padding: 10px 0;            /* Ajout d'un peu d'espace autour du carrousel */
+        overflow: hidden;           /* Permet le défilement horizontal si nécessaire */
+    }
+
+    .photos-slide img {
+        height: 25rem; /* Réduit la taille des images */
+        margin: 0 10px; /* Réduit l'espacement entre les images */
+    }
+
+    .photos:before,
+    .photos:after {
+        width: 60px; /* Réduction du dégradé pour plus de visibilité */
     }
 
     .section-contact {
