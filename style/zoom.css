@@ -1,24 +1,23 @@
-/* Conteneur des articles */
-.articles {
-    padding: 40px;
-    color: black;
+/* Conteneur du titre et de l'image avec Grid */
+.title-photo-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Le titre occupe 3/4 de la largeur, l'image 1/4 */
+    gap: 20px; /* Espace entre le titre et l'image */
+    align-items: center; /* Aligne verticalement les éléments */
 }
 
-.article-preview {
-    margin-bottom: 30px;
-    background-color: white;
-    color: black;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Titre de chaque article */
-.article-preview h2 {
+/* Titre de l'article */
+.title-photo-container h2 {
     font-family: 'Merriweather', serif;
     font-size: 2rem;
-    margin-bottom: 15px;
+    margin: 0;
     text-align: left;
+}
+
+/* Image de l'article avec un format carré et taille réduite */
+.title-photo-container img {
+    object-fit: cover; /* L'image couvre toute la zone sans déformation */
+    border-radius: 8px;
 }
 
 /* Texte de l'article */
@@ -47,14 +46,84 @@
 .portfolio-section-photos {
     background-color: white;
     padding: 20px;
-  }
+}
   
-  .portfolio-section-photos h2 {
+.portfolio-section-photos h2 {
     color: #242424;
     margin-bottom: 80px;
 }
   
-  .portfolio-section-photos p{
+.portfolio-section-photos p {
     color: black;
-  }
-  
+}
+
+/* Section introduction de l'article */
+.article-intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0 20px 20px 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Optionnel, donne un fond clair */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3/4 pour le texte, 1/4 pour l'image */
+    align-items: center;
+    width: 100%;
+}
+
+.intro-text {
+    font-family: 'Merriweather', serif;
+    color: #333;
+}
+
+.intro-text h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: black;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.intro-image img {
+    width: 90%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive pour écrans de taille moyenne */
+@media (max-width: 980px) {
+    .intro-content {
+        grid-template-columns: 1fr; /* Les éléments s'empilent verticalement */
+        gap: 20px; /* Espace ajusté entre les éléments */
+        text-align: center; /* Centre le contenu */
+    }
+
+    .intro-image img {
+        width: 100%; /* L'image prend toute la largeur */
+        height: auto; /* Conserve le ratio d'origine */
+    }
+
+    .intro-text {
+        margin: 0; /* Supprime les marges latérales */
+    }
+
+    .intro-text h1 {
+        font-size: 1.5rem; /* Réduction modérée de la taille du titre */
+    }
+
+    .intro-text p {
+        font-size: 0.8rem; /* Réduction modérée du texte */
+    }
+}

@@ -1,0 +1,103 @@
+/* Contenu principal */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.article-content h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: #242424;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Galerie de photos */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.photo-gallery figure {
+    margin: 0;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.photo-gallery figcaption {
+    font-size: 0.9rem;
+    color: #666;
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Paragraphe de texte */
+.article-content p {
+    text-align: justify;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Galerie de photos */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Paragraphe et images verticaux sur petits écrans */
+@media screen and (max-width: 960px) {
+    .photo-gallery {
+        display: flex;
+        flex-direction: column; /* Disposition verticale */
+        gap: 20px;
+    }
+
+    .photo-gallery figure,
+    .article-content p {
+        margin: 0 auto; /* Centrer chaque élément */
+        max-width: 100%; /* Assurer que les éléments occupent toute la largeur */
+    }
+
+    .photo-gallery img {
+        width: 100%; /* S'assurer que l'image occupe la largeur de son conteneur */
+        height: auto;
+    }
+
+    .article-content h1 {
+        font-size: 1.8rem;
+        text-align: center; /* Centrer le titre sur mobile */
+    }
+
+    .article-content p {
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: justify;
+        margin: 10px 0;
+        padding: 0 10px; /* Marges internes pour que le texte ne colle pas au bord */
+    }
+
+    footer {
+        flex-direction: column; /* Footer vertical sur mobile */
+        text-align: center;
+        padding: 20px;
+    }
+}
