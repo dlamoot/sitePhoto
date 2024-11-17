@@ -31,7 +31,7 @@ footer .social-links {
 }
 
 footer .social-links img {
-    width: 30px; /* Taille des icônes de réseaux sociaux */
+    width: 50px; /* Taille des icônes de réseaux sociaux */
 }
 
 /* Centre l'adresse e-mail */
@@ -155,6 +155,10 @@ header nav img {
 header, footer {
   padding: 40px 20px;  /* Augmenter le padding pour donner plus d'espace */
   font-size: 2em;  /* Agrandir la taille de la police */
+}
+
+footer .social-links img {
+  width: 40px;  /* Agrandir la taille des icônes de réseaux sociaux */
 }
 
 /* Agrandir la taille de la police dans l'entête et le pied de page */

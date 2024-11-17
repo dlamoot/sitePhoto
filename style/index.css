@@ -44,13 +44,6 @@
     align-items: center;
 }
 
-.accueil-photos .carousel-item img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    
-}
-
 .accueil-photos img {
     border-radius: 8%;
 }
@@ -93,11 +86,6 @@ label {
     margin-bottom: 10px;
 }
 
-input[type='submit'] {
-    width: 200px;
-    margin: auto;
-    margin-top: 30px;
-}
 
 
 /* Animation pour le défilement horizontal */
@@ -175,8 +163,7 @@ input[type='submit'] {
 
     .accueil-introduction img {
         order: 1;
-        margin-bottom: 20px;
-        width: 100%;
+        width: 60%;
     }
 
     .accueil-photos {
@@ -207,14 +194,5 @@ input[type='submit'] {
     .photos:before,
     .photos:after {
         width: 60px; /* Réduction du dégradé pour plus de visibilité */
-    }
-
-    .section-contact {
-        padding: 50px 20px;
-    }
-
-    .form-nom-email {
-        flex-direction: column;
-        gap: 0;
     }
 }
