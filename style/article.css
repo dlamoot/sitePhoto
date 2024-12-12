@@ -15,6 +15,11 @@ main {
     margin-bottom: 20px;
     text-align: left;
 }
+.article-content h2 {
+    color: #242424;
+    margin-bottom: 20px;
+    text-align: left;
+}
 
 /* Galerie de photos */
 .photo-gallery {
