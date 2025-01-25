@@ -1,200 +1,120 @@
-:root {
-    --animation-duration: 10s; /* Durée totale du défilement */
-    --animation-speed: 1rem;   /* Vitesse de défilement (en pixels par seconde) */
-}
-
-.accueil-introduction {
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333;
+    line-height: 1.6;
     display: flex;
-    flex-direction: row;
-    width: 50%;
-    gap: 50px;
-    align-items: center;
-    margin: auto;
-    text-align: justify;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
 }
 
-.accueil-introduction h1 {
-    line-height: 1;
-    margin-bottom: 20px;
-}
-
-.accueil-introduction img {
-    box-shadow: 12px 4px 5px #A5B4FC;
-    width: 50%;
-    border-radius: 5px;
-}
-
-.accueil-photos {
-    background-color: white;
-    padding: 80px;
-}
-
-.accueil-photos h2 {
-    color: #242424;
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.accueil-photos div {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.accueil-photos img {
-    border-radius: 8%;
-}
-
-.section-contact h2 {
-    color: #a5b4fc;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin: auto;
-    color: white;
-}
-
-.form-nom-email {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.form-column {
+.image-section {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-input,
-textarea {
-    padding: 15px;
-    border-radius: 3px;
-    border: none;
-}
-
-label {
-    margin-bottom: 10px;
-}
-
-
-
-/* Animation pour le défilement horizontal */
-@keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-
-.photos {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
     overflow: hidden;
-    padding: 60px 0;
-    background: white;
-    white-space: nowrap;
-    position: relative;
-  }
-  
-  .photos:before,
-  .photos:after {
-    position: absolute;
-    top: 0;
-    width: 150px;
+}
+
+.image-section img {
+    width: 80%;
     height: 100%;
-    content: "";
-    z-index: 2;
-  }
-  
-  .photos:before {
-    left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-  }
-  
-  .photos:after {
-    right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
-  }
-  
-  .photos:hover .photos-slide {
-    animation-play-state: paused;
-  }
-  
-  .photos-slide {
-    display: inline-block;
-    animation: slide infinite linear;
-    animation-duration: var(--animation-duration);
-  }
-
-  .photos-slide img {
-    height: 24rem; /* Augmente la hauteur des images */
-    margin: 0 20px; /* Ajuste l'espacement entre les images */
-    transition: transform 0.3s ease; /* Ajoute un effet fluide au survol */
+    object-fit: cover;
+    aspect-ratio: 5 / 4;
 }
 
-.photos-slide img:hover {
-    transform: scale(1.1); /* Zoom léger sur l'image au survol */
+.text-section {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    width: 66.66%;
+    margin: 0;
 }
 
+.text-section .logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}
 
+.text-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0 0 2rem 0;
+    width: 66.66%;
+}
 
-@media screen and (max-width: 996px) {
-    .accueil-introduction {
+.text-section .cta {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.text-section .cta:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+@media (max-width: 1024px) {
+    body {
         flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .image-section, 
+    .text-section {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .image-section {
+        height: 50vh;
+        padding: 0;
+    }
+
+    .image-section img {
+        width: 66.66%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 5 / 7;
+        margin: 0 auto;
+    }
+
+    .text-section {
         align-items: center;
+        height: 50vh;
         justify-content: center;
+        width: 80%;
     }
 
-    .accueil-introduction div {
-        padding-right: 0;
-        text-align: center;
-        order: 2;
+    .text-section .logo {
+        width: 100px;
     }
 
-    .accueil-introduction img {
-        order: 1;
-        width: 60%;
+    .text-section p {
+        font-size: 1rem;
+        width: 66.66%;
+        margin: 0 auto 2rem;
     }
 
-    .accueil-photos {
-        padding: 20px;
-    }
-
-    .accueil-photos div {
-        flex-direction: row; /* Conserve la disposition en rangée */
-        flex-wrap: nowrap; /* Empêche les images de se répartir sur plusieurs lignes */
-        gap: 10px;
-        justify-content: center;
-    }
-
-    .photos {
-        display: flex;              /* Utilise flexbox pour aligner les images en ligne */
-        flex-wrap: nowrap;          /* Empêche les images de se répartir sur plusieurs lignes */
-        justify-content: center;    /* Centre les images horizontalement */
-        gap: 10px;                  /* Espace entre les images */
-        padding: 10px 0;            /* Ajout d'un peu d'espace autour du carrousel */
-        overflow: hidden;           /* Permet le défilement horizontal si nécessaire */
-    }
-
-    .photos-slide img {
-        height: 25rem; /* Réduit la taille des images */
-        margin: 0 10px; /* Réduit l'espacement entre les images */
-    }
-
-    .photos:before,
-    .photos:after {
-        width: 60px; /* Réduction du dégradé pour plus de visibilité */
+    .text-section .cta {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 }

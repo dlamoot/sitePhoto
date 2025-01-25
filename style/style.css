@@ -1,341 +1,448 @@
+/* Reset et styles de base */
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-size: 1em;
-  font-family: sans-serif;
-  background-color: #1f2039;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  margin-left: 250px; /* Espace pour le menu latéral */
 }
 
-header,
-footer {
-background-color: white;
-padding: 20px 50px;
-}
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-footer .lien-icone img {
-    max-width: 100%; /* Assurez-vous que le logo est réactif */
-}
-
-footer .social-links {
-    display: flex;
-    gap: 10px;
-}
-
-footer .social-links img {
-    width: 50px; /* Taille des icônes de réseaux sociaux */
-}
-
-/* Centre l'adresse e-mail */
-footer .email-link {
-    flex: 1;
-    text-align: center;
-    color: black;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-footer .email-link:hover {
-    text-decoration: underline; /* Effet au survol */
-}
-
-
-nav {
+/* Navigation latérale */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: #ffffff;
+  padding: 2rem;
+  border-right: 1px solid #eaeaea;
+  z-index: 1000;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-nav a {
-  margin-left: 30px;
-}
-
-section {
-padding: 50px;
-}
-
-.banniere {
-  padding: 100px;
-  background: url("Pictures/banniere.jpeg") center;
+.nav-logo {
   text-align: center;
 }
 
-a {
-  font-size: 1em;
-  font-family: 'Merriweather', serif ; /* Merriweather */
-  text-decoration: none;
-  color : #242424;
+.nav-logo img {
+  height: auto;
+  width: 80px;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  font-size: 3.5em;
-  color : #A5B4FC;
-  font-family: 'Poppins', sans-serif ; /* Poppins */
-}
-
-h2 {
-  color: #F9F8FF;
-}
-
-p, li {
-  font-size: 1.1rem;
-  font-family: 'Merriweather', serif ; /* Merriweather */
-  color: #F9F8FF;
-}
-
-ul {
-  font-size: 1em;
-  font-family: 'Merriweather', sans-serif ; /* Poppins */ 
-  color: #F9F8FF;
-}
-
-em {
-  color : #A5B4FC;
-  font-style: normal;
-}
-
-.cta {
-  display: inline-block;
-  background: linear-gradient(#8E86B5, #ACAEED);
-  color: white;
-  border-radius: 50px;
-  padding: 20px 30px;
-}
-
-.cta:hover {
-  background: linear-gradient(#696484, #8788ba);
-  text-decoration: none;
-}
-
-.entete,
-.pied-de-page {
-background-color: white;
-}
-
-.lien-icone {
-  margin-left: 30px;
-}
-
-.lien-icone:hover {
-  opacity: 0.5;
-}
-
-/* Modification spécifique pour les petits écrans */
-@media screen and (max-width: 996px) {
-header nav {
+.nav-links {
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1.5rem;
+  overflow-y: auto;
+  scrollbar-width: none; /* Pour Firefox */
+  -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none; /* Pour Chrome, Safari et Opera */
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+/* Styles pour l'arborescence */
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-sub-group {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-items {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-items a {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Styles pour les éléments actifs */
+.nav-links a.active {
+  font-weight: 700;
+  color: #000;
+}
+
+.nav-group.active > a,
+.nav-sub-group.active > a {
+  font-weight: 700;
+  color: #000;
+}
+
+.nav-items a:hover,
+.nav-links a:hover {
+  color: #000;
+}
+
+
+.nav-links a:hover {
+  color: #666;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Galerie principale */
+.gallery {
+  padding: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.gallery-item {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .image-container img {
+  transform: scale(1.05);
+}
+
+.image-caption {
+  margin-top: 1rem;
+}
+
+.image-caption h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.image-caption p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Grille adaptative style Masonry */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.grid-item {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.grid-item::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%; /* Ratio 3:2 par défaut */
+}
+
+.grid-item-large {
+  grid-column: span 3; /* Prend toute la largeur */
+}
+
+.grid-item-large::before {
+  padding-bottom: 40%; /* Ratio plus large pour les grandes images */
+}
+
+.photo-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.photo-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.photo-link:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay au survol */
+.photo-link::after {
+  content: "Voir la photo";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.lien-icone{
-  margin-left: 0;
+.photo-link:hover::after {
+  opacity: 1;
 }
 
-header nav img {
-  margin-bottom: 20px;
-  height: 5rem;
-  width: auto;
+/* Article Specific Styles */
+.gallery article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-/* Agrandir l'entête et le pied de page */
-header, footer {
-  padding: 40px 20px;  /* Augmenter le padding pour donner plus d'espace */
-  font-size: 2em;  /* Agrandir la taille de la police */
+.gallery article h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
 }
 
-footer .social-links img {
-  width: 50px;  /* Agrandir la taille des icônes de réseaux sociaux */
+.gallery article p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #666;
 }
 
-/* Agrandir la taille de la police dans l'entête et le pied de page */
-h1 {
-  font-size: 2.5em;  /* Augmenter la taille de la police du titre principal */
+.photo-gallery figure {
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
+.photo-gallery figure img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.photo-gallery figure img:hover {
+  transform: scale(1.02);
+}
+
+.photo-gallery figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #888;
+}
+
+.photo-gallery h2 {
+  margin: 2rem 0 1rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Footer */
 footer {
-  font-size: 1.2em;  /* Agrandir la police du pied de page */
+  padding: 2rem;
+  text-align: center;
+  margin-left: -250px; /* Compense la marge du body pour centrer le footer */
+  width: calc(100% + 500px); /* Ajuste la largeur pour compenser la marge */
 }
 
-/* Agrandir la taille des liens dans le pied de page et l'entête */
-nav a {
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 1.1em;  /* Agrandir les liens dans la navigation */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
-section {
-  padding: 50px 20px 50px 20px;
+.social-links img {
+  width: 24px;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.social-links a:hover img {
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-item-large {
+    grid-column: span 2;
 }
 }
 
-
-.poppins-thin {
-    font-family: "Poppins", serif;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  .poppins-extralight {
-    font-family: "Poppins", serif;
-    font-weight: 200;
-    font-style: normal;
-  }
-  
-  .poppins-light {
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .poppins-regular {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .poppins-medium {
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .poppins-semibold {
-    font-family: "Poppins", serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .poppins-bold {
-    font-family: "Poppins", serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .poppins-extrabold {
-    font-family: "Poppins", serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-  
-  .poppins-black {
-    font-family: "Poppins", serif;
-    font-weight: 900;
-    font-style: normal;
-  }
-  
-  .poppins-thin-italic {
-    font-family: "Poppins", serif;
-    font-weight: 100;
-    font-style: italic;
-  }
-  
-  .poppins-extralight-italic {
-    font-family: "Poppins", serif;
-    font-weight: 200;
-    font-style: italic;
-  }
-  
-  .poppins-light-italic {
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  .poppins-regular-italic {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .poppins-medium-italic {
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  .poppins-semibold-italic {
-    font-family: "Poppins", serif;
-    font-weight: 600;
-    font-style: italic;
-  }
-  
-  .poppins-bold-italic {
-    font-family: "Poppins", serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
-  .poppins-extrabold-italic {
-    font-family: "Poppins", serif;
-    font-weight: 800;
-    font-style: italic;
-  }
-  
-  .poppins-black-italic {
-    font-family: "Poppins", serif;
-    font-weight: 900;
-    font-style: italic;
+@media (max-width: 1024px) {
+  body {
+      margin-left: 0;
   }
 
-  .merriweather-light {
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
+  .navigation {
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-right: none;
+      border-bottom: 1px solid #eaeaea;
   }
-  
-  .merriweather-regular {
-    font-family: "Merriweather", serif;
-    font-weight: 400;
-    font-style: normal;
+
+  .nav-logo img {
+      width: 100px;
   }
-  
-  .merriweather-bold {
-    font-family: "Merriweather", serif;
-    font-weight: 700;
-    font-style: normal;
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 1rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    flex-direction: column;
+    gap: 1rem;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    visibility: hidden;
   }
-  
-  .merriweather-black {
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: normal;
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
-  .merriweather-light-italic {
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: italic;
+
+  /* Simplified navigation menu */
+  .nav-links .nav-sub-group:not(.main-nav-items) {
+    display: none;
   }
-  
-  .merriweather-regular-italic {
-    font-family: "Merriweather", serif;
-    font-weight: 400;
-    font-style: italic;
+
+  .main-nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-  
-  .merriweather-bold-italic {
-    font-family: "Merriweather", serif;
-    font-weight: 700;
-    font-style: italic;
+
+  .main-nav-items a {
+    font-size: 1rem;
+    color: #333;
   }
-  
-  .merriweather-black-italic {
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
+
+  .gallery {
+      padding-top: 100px;
   }
-  
+
+  .gallery-grid,
+  .masonry-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+  }
+
+  .grid-item-large {
+      grid-column: span 2;
+  }
+
+  .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 30px;
+      height: 20px;
+      position: relative;
+  }
+
+  .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #333;
+      position: absolute;
+      transition: all 0.3s ease;
+  }
+
+  .menu-toggle span:nth-child(1) { top: 0; }
+  .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+  .menu-toggle span:nth-child(3) { bottom: 0; }
+
+  .menu-toggle.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .gallery article {
+    padding: 1rem;
+}
+
+.gallery article h1 {
+    font-size: 2rem;
+}
+
+  footer {
+      margin-left: 0;
+      width: 100%;
+  }
+
+  .image-container {
+      aspect-ratio: 4/3;
+  }
+}

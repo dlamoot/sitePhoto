@@ -17,7 +17,7 @@ main {
 }
 .article-content h2 {
     color: #242424;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
 }
 
@@ -57,7 +57,7 @@ main {
     color: #333;
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Galerie de photos */
