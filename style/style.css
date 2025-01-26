@@ -339,6 +339,11 @@ footer {
       margin-left: 0;
   }
 
+  .portfolio-section-photos {
+      font-size: 1.24rem;
+      text-align: justify;
+  }
+
   .navigation {
       width: 100%;
       height: auto;
