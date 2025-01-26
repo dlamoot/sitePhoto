@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio - DVD4rts</title>
+    <title>Paris - DVD4rts</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,8 +51,8 @@
                     </div>
                 </div>
                 <div class="nav-sub-group">
-                    <a href = "lille.html">Lille</a>
-                    <a href="england.html">Angleterre</a>
+                    <a href="lille.html">Lille</a>
+                    <a href="england.html" class="active">Angleterre</a>
                     <a href="barcelone.html">Barcelone</a>
                     <a href="sport.html">Sport</a>
                     <div class="nav-items">
@@ -67,7 +67,6 @@
                         <a href="autreNature.html">Autre</a>
                     </div>
                     <a href="nb.html">Noir et Blanc</a>
-                    <a href="fondEcran.html">Fond d'écran</a>
                 </div>
             </div>
         </div>
@@ -79,73 +78,30 @@
     </nav>
 
     <main class="gallery">
-        <div class="gallery-grid">
-            <a href="paris.html" class="gallery-item">
-                <div class="image-container">
-                    <img src="Pictures/Paris/TourEiffel/VF7A8385-Enhanced-NR-2.webp" title = "Album Tour Eiffel" alt="Album Tour Eiffel" />
-                </div>
-                <div class = "image-caption">
-                    <h3>Paris</h3>
-                </div>
-            </a>
-            <a href="lille.html" class="gallery-item">
-                <div class="image-container">
-                    <img src="Pictures/Lille/4-VF7A3476.webp" title = "Album Lille" alt="Album Lille" />
-                </div>
-                <div class = "image-caption">
-                    <h3>Lille</h3>
-                </div>
-            </a>
-            <a href="england.html" class="gallery-item">
-                <div class="image-container">
-                    <img src="Pictures/england/29-P1100281.webp" title = "Album Angleterre" alt="Album Angleterre" />
-                </div>
-                <div class = "image-caption">
-                    <h3>Angleterre</h3>
-                </div>
-            </a>
-            <a href="barcelone.html" class="gallery-item">
-                <div class="image-container">
-                    <img src="Pictures/Barcelone/21-P1130455.webp" title = "Album Barcelone" alt="Album Barcelone" />
-                </div>
-                <div class = "image-caption">
-                    <h3>Barcelone</h3>
-                </div>
-            </a>
-                <a href="sport.html" class="gallery-item">
-                    <div class=" image-container">
-                        <img src = "Pictures/Sport/Athletisme/FouleeJazy2024/VF7A7349.webp" title = "Running" alt = "Running"/>
-                    </div>
-                    <div class="image-caption">
-                        <h3>Sport</h3>
-                    </div>
+        <div class="masonry-grid">
+            <div class="grid-item">
+                <a href="Pictures/england/29-P1100281.jpg" class="photo-link">
+                    <img src="Pictures/england/29-P1100281.webp" alt="Photo de Londres">
                 </a>
-                <a href="nature.html" class="gallery-item">
-                    <div class="image-container">
-                        <img src = "Pictures/Nature/Paysage/VF7A7654.webp" title = "Un petit bout de Monmartre" alt = "Sacré coeur"/>
-                    </div>
-                    <div class="image-caption">
-                        <h3>Nature</h3>
-                    </div>
-                </a>
-                <a href="nb.html" class="gallery-item">
-                    <div class="image-container">
-                        <img src = "Pictures/NB/VF7A6208.webp" title = "Cygne NB" alt = "Cygne NB"/>
-                    </div>
-                    <div class="image-caption">
-                        <h3>Noir et Blanc</h3>
-                    </div>
-                </a>
-                <a href="fondEcran.html" class="gallery-item">
-                    <div class="image-container">
-                        <img src = "Pictures/FondEcran/VF7A4099-Enhanced-NR.webp" title = "Fond d'écran" alt = "Fond d'écran"/>
-                    </div>
-                    <div class="image-caption">
-                        <h3>Fond d'écran</h3>
-                    </div>
             </div>
-        </section>
+            <div class="grid-item">
+                <a href="Pictures/england/11-P1180615.jpg" class="photo-link">
+                    <img src="Pictures/england/11-P1180615.webp" alt="Photo de Windsor">
+                </a>
+            </div>
+            <div class="grid-item grid-item-large">
+                <a href="Pictures/england/10-P1180668.jpg" class="photo-link">
+                    <img src="Pictures/england/10-P1180668.webp" alt="Photo de Windsor">
+                </a>
+            </div>
+            <div class="grid-item grid-item-large">
+                <a href="Pictures/england/8-P1180704.jpg" class="photo-link">
+                    <img src="Pictures/england/8-P1180704.webp" alt="Brighton">
+                </a>
+            </div>
+        </div>
     </main>
+
     <footer>
         <div class="social-links">
             <a target="_blank" href="https://www.instagram.com/dvd_4rts?igsh=c3U5OTRweXI2MXBz">
@@ -163,5 +119,4 @@
         });
     </script>
 </body>
-
 </html>

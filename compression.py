@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-def compress_and_convert_images_recursive(input_folder, output_folder=None, quality=1):
+def compress_and_convert_images_recursive(input_folder, output_folder=None, quality=80):
     """
     Recherche récursive des images JPEG dans un dossier et ses sous-dossiers,
     puis les compresse et les convertit en WebP.

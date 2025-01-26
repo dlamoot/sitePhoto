@@ -307,6 +307,10 @@
       overflow-y: auto;
       visibility: hidden;
     }
+
+    .nav-links a {
+      font-size: 1.5rem; /* Increased from default size */
+    }
   
     .nav-links.active {
       transform: translateY(0);
@@ -317,8 +321,11 @@
     }
   
     /* Simplified navigation menu */
-    .nav-links .nav-sub-group:not(.main-nav-items) {
-      display: none;
+    .nav-links .nav-sub-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
     }
   
     .main-nav-items {
@@ -328,7 +335,7 @@
     }
   
     .main-nav-items a {
-      font-size: 1rem;
+      font-size: 1.5rem;
       color: #333;
     }
   
