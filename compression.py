@@ -39,6 +39,6 @@ def compress_and_convert_images_recursive(input_folder, output_folder=None, qual
                     print(f"Erreur lors du traitement de l'image {input_path}: {e}")
 
 # Exemple d'utilisation
-input_folder = "Pictures/Nature/Paysage"  # Remplacez par le chemin du dossier racine
+input_folder = "Pictures/Zoom/Vendome"  # Remplacez par le chemin du dossier racine
 output_folder = None  # Remplacez par le chemin du dossier de sortie ou mettez None
 compress_and_convert_images_recursive(input_folder, output_folder, quality=80)

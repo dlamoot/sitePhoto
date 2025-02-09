@@ -247,6 +247,7 @@ body {
 }
 
 .gallery article p {
+  text-align: justify;
   margin-bottom: 1.5rem;
   line-height: 1.6;
   color: #666;
